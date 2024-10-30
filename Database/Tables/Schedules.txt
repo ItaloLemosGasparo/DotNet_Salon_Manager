@@ -1,0 +1,13 @@
+-- ================================================== --
+-- Creator    : Ítalo Lemos
+-- Date       : 28/10/2024
+-- Description: To store Schedules
+-- ================================================== --
+CREATE TABLE Schedules (
+    ScheduleId INT IDENTITY PRIMARY KEY,
+    ScheduledDateTime DATETIME NOT NULL,
+    ClientId INT FOREIGN KEY REFERENCES Clients(ClientId) NOT NULL,
+    ProcedureId INT FOREIGN KEY REFERENCES Procedures(ProcedureId) NOT NULL,
+    UserId INT FOREIGN KEY REFERENCES Users(UserId) NOT NULL,
+    StatusId INT FOREIGN KEY REFERENCES Status(StatusId) NOT NULL
+);

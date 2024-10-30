@@ -1,0 +1,9 @@
+-- ================================================== --
+-- Creator    : Ítalo Lemos
+-- Date       : 28/10/2024
+-- Description: To store Schedules Statuses
+-- ================================================== --
+CREATE TABLE Status (
+    StatusId INT IDENTITY PRIMARY KEY,
+    StatusDescription VARCHAR(30) NOT NULL
+);

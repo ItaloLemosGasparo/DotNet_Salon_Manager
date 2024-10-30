@@ -1,0 +1,12 @@
+-- ================================================== --
+-- Creator    : Ítalo Lemos
+-- Date       : 28/10/2024
+-- Description: Store System Users Like Owners, Employees or partners
+-- ================================================== --
+CREATE TABLE Users (
+    UserId INT IDENTITY PRIMARY KEY,
+    Name VARCHAR(100) NOT NULL,
+    CPF VARCHAR(11) NOT NULL,
+    Email VARCHAR(255) NOT NULL,
+    AccessLevelId INT FOREIGN KEY REFERENCES AccessLevels(AccessLevelId) NOT NULL
+);

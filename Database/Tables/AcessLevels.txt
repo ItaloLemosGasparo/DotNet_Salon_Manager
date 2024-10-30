@@ -1,0 +1,9 @@
+-- ================================================== --
+-- Creator    : Ítalo Lemos
+-- Date       : 28/10/2024
+-- Description: Store System Access Levels
+-- ================================================== --
+CREATE TABLE AccessLevels (
+    AccessLevelId INT IDENTITY PRIMARY KEY,
+    AccessLevelDescription VARCHAR(50) NOT NULL
+);

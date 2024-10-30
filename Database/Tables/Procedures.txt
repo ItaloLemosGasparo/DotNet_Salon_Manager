@@ -1,0 +1,11 @@
+-- ================================================== --
+-- Creator    : Ítalo Lemos
+-- Date       : 28/10/2024
+-- Description: To store Procedures that the salon performs
+-- ================================================== --
+CREATE TABLE Procedures (
+    ProcedureId INT IDENTITY PRIMARY KEY,
+    Name VARCHAR(50) NOT NULL,
+    Description VARCHAR(255),
+    Price MONEY NOT NULL
+);

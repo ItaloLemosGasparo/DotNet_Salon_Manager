@@ -1,0 +1,14 @@
+-- ================================================== --
+-- Creator    : Ítalo Lemos
+-- Date       : 28/10/2024
+-- Description: To store User's, Client's and Supplier's Phones
+-- ================================================== --
+CREATE TABLE Phones (
+    PhoneId INT IDENTITY PRIMARY KEY,
+    DDD VARCHAR(2) NOT NULL,
+    PhoneNumber VARCHAR(9) NOT NULL,
+    Type VARCHAR(15) NOT NULL,
+    UserId INT NULL FOREIGN KEY REFERENCES Users(UserId),
+    ClientId INT NULL FOREIGN KEY REFERENCES Clients(ClientId),
+    SupplierId INT NULL FOREIGN KEY REFERENCES Suppliers(SupplierId)
+);

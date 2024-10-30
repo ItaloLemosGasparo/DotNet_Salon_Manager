@@ -1,0 +1,10 @@
+-- ================================================== --
+-- Creator    : Ítalo Lemos
+-- Date       : 28/10/2024
+-- Description: To store Product Suppliers
+-- ================================================== --
+CREATE TABLE Suppliers (
+    SupplierId INT IDENTITY PRIMARY KEY,
+    Name VARCHAR(100) NOT NULL,
+    Contact VARCHAR(100) NOT NULL
+);

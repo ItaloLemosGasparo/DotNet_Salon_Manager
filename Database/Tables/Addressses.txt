@@ -1,0 +1,17 @@
+-- ================================================== --
+-- Creator    : Ítalo Lemos
+-- Date       : 28/10/2024
+-- Description: To store User's, Client's and Supplier's Addressses
+-- ================================================== --
+CREATE TABLE Addressses(
+    AddressId INT IDENTITY PRIMARY KEY,
+    Street VARCHAR(150) NOT NULL,
+    Number VARCHAR(10) NOT NULL,
+    Complement VARCHAR(50),
+    City VARCHAR(50) NOT NULL,
+    State VARCHAR(2) NOT NULL,
+    PostalCode VARCHAR(8) NOT NULL,
+    UserId INT NULL FOREIGN KEY REFERENCES Users(UserId),
+    ClientId INT NULL FOREIGN KEY REFERENCES Clients(ClientId),
+    SupplierId INT NULL FOREIGN KEY REFERENCES Suppliers(SupplierId)
+);

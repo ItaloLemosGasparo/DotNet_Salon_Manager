@@ -1,0 +1,12 @@
+-- ================================================== --
+-- Creator    : Ítalo Lemos
+-- Date       : 28/10/2024
+-- Description: Store System Clients
+-- ================================================== --
+CREATE TABLE Clients (
+    ClientId INT IDENTITY PRIMARY KEY,
+    Name VARCHAR(100) NOT NULL,
+    CPF VARCHAR(11) NOT NULL,
+    Birthdate DATE NOT NULL,
+    Email VARCHAR(255) NOT NULL
+);
