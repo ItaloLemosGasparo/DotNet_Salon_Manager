@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Configuration;
 using System.Data.SqlClient;
-using System.Windows.Forms;
+using System.Windows.Forms; //remover isso aqui
 
 
 namespace Globals
