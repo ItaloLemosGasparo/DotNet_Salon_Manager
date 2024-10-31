@@ -77,5 +77,57 @@ namespace Globals
         
             return id;
         }
+
+        public static DataTable CarregarDataTable(string procedure, SqlParameterCollection lstParametros = null, int timeout = 30, Ambiente ambiente = Ambiente.Producao)
+        {
+            MsgRetornoClasse = "OK";
+        
+            DataTable dataTable = new DataTable();
+        
+            SegCriptografia crypto = new SegCriptografia(SegCriptografia.CryptoTypes.encTypeDES);
+            string cnx = crypto.Decrypt(CieloDBConnection.strCnxDBCieloSolucion(ambiente), "Key_str.Cnx.DB.CieloSolucion");
+        
+            using (SqlConnection connection = new SqlConnection(cnx))
+            {
+                try
+                {
+                    connection.Open();
+        
+                    using (SqlCommand cmd = new SqlCommand())
+                    {
+                        SqlDataAdapter adapter = new SqlDataAdapter();
+        
+                        cmd.Connection = connection;
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.CommandText = procedure;
+        
+                        cmd.Parameters.Clear();
+        
+                        if (lstParametros != null)
+                        {
+                            foreach (var item in lstParametros.Cast<SqlParameter>().ToList())
+                            {
+                                cmd.Parameters.Add(item.ParameterName, item.SqlDbType).Value = item.Value;
+                            }
+                        }
+        
+                        cmd.CommandTimeout = timeout;
+        
+                        adapter.SelectCommand = cmd;
+                        adapter.Fill(dataTable);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MsgRetornoClasse = "Erro ao acessar a base de dados. Detalhe do Erro: \n" + ex.Message;
+                }
+                finally
+                {
+                    connection.Close();
+                }
+            }
+        
+            return dataTable;
+        }
     }    
 }
