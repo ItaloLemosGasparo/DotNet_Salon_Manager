@@ -6,7 +6,7 @@ List<(int Id, string Status)> lstId = (dgvMain.DataSource as DataTable).AsEnumer
     .ToList();
 ```
 
-### Filtering DataGridView Rows and Adding to DataTable
+### Filtering DataGridView Rows and Adding to DataTable (using cast instead "as datatable")
 
 This example filters rows from a `DataGridView` where the `Flag` column is set to true, then adds the `Id` and `Status` values from each row to a `DataTable`.
 
