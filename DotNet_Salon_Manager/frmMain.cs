@@ -12,13 +12,14 @@ namespace DotNet_Salon_Manager
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Application.Exit();
         }
 
         private void frmMain_Load(object sender, EventArgs e)
         {
 
         }
+
         private void openForm(Form frm)
         {
             lblForm.Text = frm.Name;

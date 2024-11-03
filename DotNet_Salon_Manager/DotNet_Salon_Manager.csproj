@@ -58,6 +58,50 @@
     <Compile Include="frmLoginScreen.Designer.cs">
       <DependentUpon>frmLoginScreen.cs</DependentUpon>
     </Compile>
+    <Compile Include="modules\Appointments\frmAppoitments.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="modules\Appointments\frmAppoitments.Designer.cs">
+      <DependentUpon>frmAppoitments.cs</DependentUpon>
+    </Compile>
+    <Compile Include="modules\Classes\UserProfile.cs" />
+    <Compile Include="modules\Clients\frmClientsManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="modules\Clients\frmClientsManagement.Designer.cs">
+      <DependentUpon>frmClientsManagement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="modules\Clients\frmNewClient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="modules\Clients\frmNewClient.Designer.cs">
+      <DependentUpon>frmNewClient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="modules\Employees\frmEmployeeManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="modules\Employees\frmEmployeeManagement.Designer.cs">
+      <DependentUpon>frmEmployeeManagement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="modules\Employees\frmNewEmployee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="modules\Employees\frmNewEmployee.Designer.cs">
+      <DependentUpon>frmNewEmployee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="modules\Products\frmNewProduct.cs" />
+    <Compile Include="modules\Users\frmNewUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="modules\Users\frmNewUser.Designer.cs">
+      <DependentUpon>frmNewUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="modules\Users\frmUserManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="modules\Users\frmUserManagement.Designer.cs">
+      <DependentUpon>frmUserManagement.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmLoginScreen.resx">
@@ -65,6 +109,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="modules\Appointments\frmAppoitments.resx">
+      <DependentUpon>frmAppoitments.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -89,7 +136,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="modules\" />
+    <Folder Include="modules\Reports\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Globals\Globals.csproj">

@@ -32,21 +32,22 @@
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.clientsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newClientToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.clientsManagementToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.productsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.newProductToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.productsManagementToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.appointmentsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.employeesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.newEmployeeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.employeesManagementToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reportsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.newProductToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.productsManagementToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.newEmployeeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.employeesManagementToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip = new System.Windows.Forms.StatusStrip();
-            this.lblForm = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStripProgressBar1 = new System.Windows.Forms.ToolStripProgressBar();
-            this.lblProgressBar = new System.Windows.Forms.ToolStripStatusLabel();
             this.lblStatus = new System.Windows.Forms.ToolStripStatusLabel();
+            this.lblProgressBar = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripProgressBar1 = new System.Windows.Forms.ToolStripProgressBar();
+            this.lblForm = new System.Windows.Forms.ToolStripStatusLabel();
             this.menuStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.SuspendLayout();
@@ -81,7 +82,8 @@
             // clientsToolStripMenuItem
             // 
             this.clientsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.newClientToolStripMenuItem});
+            this.newClientToolStripMenuItem,
+            this.clientsManagementToolStripMenuItem});
             this.clientsToolStripMenuItem.Name = "clientsToolStripMenuItem";
             this.clientsToolStripMenuItem.Size = new System.Drawing.Size(55, 20);
             this.clientsToolStripMenuItem.Text = "Clients";
@@ -89,8 +91,14 @@
             // newClientToolStripMenuItem
             // 
             this.newClientToolStripMenuItem.Name = "newClientToolStripMenuItem";
-            this.newClientToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
+            this.newClientToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
             this.newClientToolStripMenuItem.Text = "New Client";
+            // 
+            // clientsManagementToolStripMenuItem
+            // 
+            this.clientsManagementToolStripMenuItem.Name = "clientsManagementToolStripMenuItem";
+            this.clientsManagementToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
+            this.clientsManagementToolStripMenuItem.Text = "Clients Management";
             // 
             // productsToolStripMenuItem
             // 
@@ -100,6 +108,18 @@
             this.productsToolStripMenuItem.Name = "productsToolStripMenuItem";
             this.productsToolStripMenuItem.Size = new System.Drawing.Size(66, 20);
             this.productsToolStripMenuItem.Text = "Products";
+            // 
+            // newProductToolStripMenuItem
+            // 
+            this.newProductToolStripMenuItem.Name = "newProductToolStripMenuItem";
+            this.newProductToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
+            this.newProductToolStripMenuItem.Text = "New Product";
+            // 
+            // productsManagementToolStripMenuItem
+            // 
+            this.productsManagementToolStripMenuItem.Name = "productsManagementToolStripMenuItem";
+            this.productsManagementToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
+            this.productsManagementToolStripMenuItem.Text = "Products Management";
             // 
             // appointmentsToolStripMenuItem
             // 
@@ -115,6 +135,18 @@
             this.employeesToolStripMenuItem.Name = "employeesToolStripMenuItem";
             this.employeesToolStripMenuItem.Size = new System.Drawing.Size(76, 20);
             this.employeesToolStripMenuItem.Text = "Employees";
+            // 
+            // newEmployeeToolStripMenuItem
+            // 
+            this.newEmployeeToolStripMenuItem.Name = "newEmployeeToolStripMenuItem";
+            this.newEmployeeToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
+            this.newEmployeeToolStripMenuItem.Text = "New Employee";
+            // 
+            // employeesManagementToolStripMenuItem
+            // 
+            this.employeesManagementToolStripMenuItem.Name = "employeesManagementToolStripMenuItem";
+            this.employeesManagementToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
+            this.employeesManagementToolStripMenuItem.Text = "Employees Management";
             // 
             // reportsToolStripMenuItem
             // 
@@ -134,30 +166,6 @@
             this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
             this.helpToolStripMenuItem.Text = "Help";
             // 
-            // newProductToolStripMenuItem
-            // 
-            this.newProductToolStripMenuItem.Name = "newProductToolStripMenuItem";
-            this.newProductToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
-            this.newProductToolStripMenuItem.Text = "New Product";
-            // 
-            // productsManagementToolStripMenuItem
-            // 
-            this.productsManagementToolStripMenuItem.Name = "productsManagementToolStripMenuItem";
-            this.productsManagementToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
-            this.productsManagementToolStripMenuItem.Text = "Products Management";
-            // 
-            // newEmployeeToolStripMenuItem
-            // 
-            this.newEmployeeToolStripMenuItem.Name = "newEmployeeToolStripMenuItem";
-            this.newEmployeeToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
-            this.newEmployeeToolStripMenuItem.Text = "New Employee";
-            // 
-            // employeesManagementToolStripMenuItem
-            // 
-            this.employeesManagementToolStripMenuItem.Name = "employeesManagementToolStripMenuItem";
-            this.employeesManagementToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
-            this.employeesManagementToolStripMenuItem.Text = "Employees Management";
-            // 
             // statusStrip
             // 
             this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -171,17 +179,11 @@
             this.statusStrip.TabIndex = 2;
             this.statusStrip.Text = "statusStrip1";
             // 
-            // lblForm
+            // lblStatus
             // 
-            this.lblForm.Name = "lblForm";
-            this.lblForm.Size = new System.Drawing.Size(59, 17);
-            this.lblForm.Text = "LBLFORM";
-            // 
-            // toolStripProgressBar1
-            // 
-            this.toolStripProgressBar1.Name = "toolStripProgressBar1";
-            this.toolStripProgressBar1.Size = new System.Drawing.Size(100, 16);
-            this.toolStripProgressBar1.Visible = false;
+            this.lblStatus.Name = "lblStatus";
+            this.lblStatus.Size = new System.Drawing.Size(39, 17);
+            this.lblStatus.Text = "Status";
             // 
             // lblProgressBar
             // 
@@ -190,11 +192,17 @@
             this.lblProgressBar.Text = "ProgressBar:";
             this.lblProgressBar.Visible = false;
             // 
-            // lblStatus
+            // toolStripProgressBar1
             // 
-            this.lblStatus.Name = "lblStatus";
-            this.lblStatus.Size = new System.Drawing.Size(39, 17);
-            this.lblStatus.Text = "Status";
+            this.toolStripProgressBar1.Name = "toolStripProgressBar1";
+            this.toolStripProgressBar1.Size = new System.Drawing.Size(100, 16);
+            this.toolStripProgressBar1.Visible = false;
+            // 
+            // lblForm
+            // 
+            this.lblForm.Name = "lblForm";
+            this.lblForm.Size = new System.Drawing.Size(59, 17);
+            this.lblForm.Text = "LBLFORM";
             // 
             // frmMain
             // 
@@ -238,5 +246,6 @@
         private System.Windows.Forms.ToolStripStatusLabel lblStatus;
         private System.Windows.Forms.ToolStripStatusLabel lblProgressBar;
         private System.Windows.Forms.ToolStripProgressBar toolStripProgressBar1;
+        private System.Windows.Forms.ToolStripMenuItem clientsManagementToolStripMenuItem;
     }
 }

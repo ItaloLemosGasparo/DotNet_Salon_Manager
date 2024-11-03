@@ -1,8 +1,9 @@
 ﻿using System;
-using System.Security.Cryptography;
-using System.Text;
+using System.Data;
 using System.Windows.Forms;
+using Classes;
 using Globals;
+using DotNet_Salon_Manager.modules.Classes;
 
 
 namespace DotNet_Salon_Manager.modules
@@ -21,44 +22,51 @@ namespace DotNet_Salon_Manager.modules
 
         private void btnLogin_Click(object sender, System.EventArgs e)
         {
-            frmMain frmMain = new frmMain();    
-            frmMain.ShowDialog();
+            string email = txtEmail.Text.Trim();
+            string password = txtPass.Text;
+
+            if (Global.IsValidEmail(email))
+            {
+                MessageBox.Show("Invalid Email format.", "Login Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            try
+            {
+                DataRow drUser = Queries.FindUserByEmail(email);
+
+                if (drUser == null)
+                {
+                    MessageBox.Show("Incorrect Email or Password.", "Login Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                if (PasswordHasher.VerifyPassword(password, drUser["PasswordHash"].ToString(), drUser["PasswordSalt"].ToString()))
+                {
+                    LoadUserProfile(drUser);
+
+                    using (frmMain frmMain = new frmMain())
+                    {
+                        frmMain.ShowDialog();
+                    }
+                }
+                else
+                    MessageBox.Show("Incorrect Email or Password.", "Login Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occurred while trying to log in. Details: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
-        private void LoginScreen_Load(object sender, System.EventArgs e)
+        private void LoadUserProfile(DataRow drUser)
         {
-            Queries.TestarConecao();
-        }
-
-        public static (string Hash, string Salt) HashPassword(string password)
-        {
-            // Gerar um salt aleatório
-            byte[] saltBytes = new byte[16];
-            using (var rng = new RNGCryptoServiceProvider())
-            {
-                rng.GetBytes(saltBytes);
-            }
-            string salt = Convert.ToBase64String(saltBytes);
-
-            // Concatenar salt à senha e hash
-            using (var sha256 = SHA256.Create())
-            {
-                string saltedPassword = password + salt;
-                byte[] hashBytes = sha256.ComputeHash(Encoding.UTF8.GetBytes(saltedPassword));
-                string hash = Convert.ToBase64String(hashBytes);
-                return (hash, salt);
-            }
-        }
-
-        public static bool VerifyPassword(string password, string storedHash, string storedSalt)
-        {
-            string saltedPassword = password + storedSalt;
-            using (var sha256 = SHA256.Create())
-            {
-                byte[] hashBytes = sha256.ComputeHash(Encoding.UTF8.GetBytes(saltedPassword));
-                string hash = Convert.ToBase64String(hashBytes);
-                return hash == storedHash;
-            }
+            UserProfile.StartProfile(
+                Convert.ToInt32(drUser["UserId"]),
+                drUser["Name"].ToString(),
+                drUser["CPF"].ToString(),
+                drUser["Email"].ToString(),
+                Convert.ToInt32(drUser["AccessLevelId"]));
         }
     }
 }
