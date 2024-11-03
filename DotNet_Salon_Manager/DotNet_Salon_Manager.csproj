@@ -64,6 +64,7 @@
     <Compile Include="modules\Appointments\frmAppoitments.Designer.cs">
       <DependentUpon>frmAppoitments.cs</DependentUpon>
     </Compile>
+    <Compile Include="modules\Classes\User.cs" />
     <Compile Include="modules\Classes\UserProfile.cs" />
     <Compile Include="modules\Clients\frmClientsManagement.cs">
       <SubType>Form</SubType>
@@ -89,7 +90,12 @@
     <Compile Include="modules\Employees\frmNewEmployee.Designer.cs">
       <DependentUpon>frmNewEmployee.cs</DependentUpon>
     </Compile>
-    <Compile Include="modules\Products\frmNewProduct.cs" />
+    <Compile Include="modules\Products\frmNewProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="modules\Products\frmNewProduct.Designer.cs">
+      <DependentUpon>frmNewProduct.cs</DependentUpon>
+    </Compile>
     <Compile Include="modules\Users\frmNewUser.cs">
       <SubType>Form</SubType>
     </Compile>

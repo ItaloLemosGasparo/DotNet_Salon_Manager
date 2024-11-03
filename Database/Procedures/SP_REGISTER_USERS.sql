@@ -25,8 +25,6 @@ BEGIN
         VALUES (@UserId, @PasswordHash, @PasswordSalt);
 
         COMMIT TRANSACTION;
-
-        PRINT 'Usuário cadastrado com sucesso';
     END TRY
     BEGIN CATCH
         ROLLBACK TRANSACTION;

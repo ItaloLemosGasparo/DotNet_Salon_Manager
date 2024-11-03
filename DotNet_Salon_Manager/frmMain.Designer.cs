@@ -93,12 +93,14 @@
             this.newClientToolStripMenuItem.Name = "newClientToolStripMenuItem";
             this.newClientToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
             this.newClientToolStripMenuItem.Text = "New Client";
+            this.newClientToolStripMenuItem.Click += new System.EventHandler(this.newClientToolStripMenuItem_Click);
             // 
             // clientsManagementToolStripMenuItem
             // 
             this.clientsManagementToolStripMenuItem.Name = "clientsManagementToolStripMenuItem";
             this.clientsManagementToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
             this.clientsManagementToolStripMenuItem.Text = "Clients Management";
+            this.clientsManagementToolStripMenuItem.Click += new System.EventHandler(this.clientsManagementToolStripMenuItem_Click);
             // 
             // productsToolStripMenuItem
             // 
@@ -114,12 +116,14 @@
             this.newProductToolStripMenuItem.Name = "newProductToolStripMenuItem";
             this.newProductToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
             this.newProductToolStripMenuItem.Text = "New Product";
+            this.newProductToolStripMenuItem.Click += new System.EventHandler(this.newProductToolStripMenuItem_Click);
             // 
             // productsManagementToolStripMenuItem
             // 
             this.productsManagementToolStripMenuItem.Name = "productsManagementToolStripMenuItem";
             this.productsManagementToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
             this.productsManagementToolStripMenuItem.Text = "Products Management";
+            this.productsManagementToolStripMenuItem.Click += new System.EventHandler(this.productsManagementToolStripMenuItem_Click);
             // 
             // appointmentsToolStripMenuItem
             // 
@@ -201,8 +205,8 @@
             // lblForm
             // 
             this.lblForm.Name = "lblForm";
-            this.lblForm.Size = new System.Drawing.Size(59, 17);
-            this.lblForm.Text = "LBLFORM";
+            this.lblForm.Size = new System.Drawing.Size(53, 17);
+            this.lblForm.Text = "frmMain";
             // 
             // frmMain
             // 
@@ -215,7 +219,6 @@
             this.Name = "frmMain";
             this.Text = "Salon Manager";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Load += new System.EventHandler(this.frmMain_Load);
             this.menuStrip.ResumeLayout(false);
             this.menuStrip.PerformLayout();
             this.statusStrip.ResumeLayout(false);

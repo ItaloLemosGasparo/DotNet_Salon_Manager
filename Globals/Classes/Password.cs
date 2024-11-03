@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Classes
 {
-    public class PasswordHasher
+    public class Password
     {
         public static (byte[] Hash, byte[] Salt) HashPassword(string password)
         {

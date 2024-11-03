@@ -10,9 +10,9 @@ namespace Globals
     public class Queries
     {
         private static string AzureConnectionString = ConfigurationManager.ConnectionStrings["AzureConnectionString"].ConnectionString;
-        public static string classReturnMessage { get; set; }
+        public static string classReturnMessage { get; private set; }
 
-        public static int ExecuteProcedure(string procedure, SqlParameterCollection lstParametros, SqlParameter idOutput = null)
+        public static int ExecuteProcedure(string procedure, SqlParameterCollection lstParametros, SqlParameter idOutput = null, int timeout = 30)
         {
             int id = 0;
             classReturnMessage = "OK";
@@ -41,7 +41,7 @@ namespace Globals
                         if (idOutput != null)
                             cmd.Parameters.Add(idOutput);
 
-                        cmd.CommandTimeout = 1000;
+                        cmd.CommandTimeout = timeout;
                         id = cmd.ExecuteNonQuery();
 
                         if (idOutput != null)
@@ -50,7 +50,7 @@ namespace Globals
                 }
                 catch (Exception ex)
                 {
-                    classReturnMessage = "Erro ao acessar a base de dados. Detalhe do Erro: \n" + ex.Message;
+                    classReturnMessage = "An error occurred while trying to access the database. Details: \n" + ex.Message;
                 }
                 finally
                 {
@@ -59,17 +59,7 @@ namespace Globals
             }
 
             return id;
-        }
-
-        public static DataRow FindUserByEmail(string Email)
-        {
-            SqlParameterCollection sqlParameter = new SqlCommand().Parameters;
-            sqlParameter.Add("@Email", SqlDbType.VarChar).Value = Email;
-
-            DataTable dataTable = LoadDataTable("SP_FIND_USER_BY_EMAIL", sqlParameter);
-
-            return dataTable.Rows.Count > 0? dataTable.Rows[0] : null;
-        }
+        }        
 
         public static DataTable LoadDataTable (string procedure, SqlParameterCollection lstParametros = null, int timeout = 30)
         {
@@ -109,7 +99,7 @@ namespace Globals
                 }
                 catch (Exception ex)
                 {
-                    classReturnMessage = "Erro ao acessar a base de dados. Detalhe do Erro: \n" + ex.Message;
+                    classReturnMessage = "An error occurred while trying to acess the database. Details: \n" + ex.Message;
                 }
                 finally
                 {
@@ -118,25 +108,6 @@ namespace Globals
             }
 
             return dataTable;
-        }
-
-        public static void RegisterUser(string name, string cpf, string email, int accessLevel, string password)
-        {
-            var (passwordHash, passwordSalt) = PasswordHasher.HashPassword(password);
-
-            // Converter o hash e o salt para strings base64
-            string stringHash = Convert.ToBase64String(passwordHash);
-            string stringSalt = Convert.ToBase64String(passwordSalt);
-
-            SqlParameterCollection sqlParameter = new SqlCommand().Parameters;
-            sqlParameter.Add("@Name", SqlDbType.VarChar).Value = name;
-            sqlParameter.Add("@CPF", SqlDbType.VarChar).Value = cpf;
-            sqlParameter.Add("@Email", SqlDbType.VarChar).Value = email;
-            sqlParameter.Add("@AccessLevel", SqlDbType.Int).Value = accessLevel;
-            sqlParameter.Add("@PasswordHash", SqlDbType.VarChar).Value = stringHash;
-            sqlParameter.Add("@PasswordSalt", SqlDbType.VarChar).Value = stringSalt;
-
-            ExecuteProcedure("SP_REGISTER_USER", sqlParameter);
-        }
+        }        
     }
 }

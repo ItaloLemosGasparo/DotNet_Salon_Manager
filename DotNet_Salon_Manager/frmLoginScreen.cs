@@ -22,41 +22,42 @@ namespace DotNet_Salon_Manager.modules
 
         private void btnLogin_Click(object sender, System.EventArgs e)
         {
-            string email = txtEmail.Text.Trim();
-            string password = txtPass.Text;
+            //string email = txtEmail.Text.Trim();
+            //string password = txtPass.Text;
 
-            if (Global.IsValidEmail(email))
-            {
-                MessageBox.Show("Invalid Email format.", "Login Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
+            //if (string.IsNullOrWhiteSpace(email) || string.IsNullOrWhiteSpace(password))
+            //{
+            //    MessageBox.Show("Please enter both your email and password.", "Login Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            //    return;
+            //}
+            //if (!Global.IsValidEmail(email))
+            //{
+            //    MessageBox.Show("Invalid Email format.", "Login Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            //    return;
+            //}
 
-            try
-            {
-                DataRow drUser = Queries.FindUserByEmail(email);
+            //try
+            //{
+            //    DataRow drUser = User.FindUserByEmail(email);
 
-                if (drUser == null)
-                {
-                    MessageBox.Show("Incorrect Email or Password.", "Login Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
-                }
-
-                if (PasswordHasher.VerifyPassword(password, drUser["PasswordHash"].ToString(), drUser["PasswordSalt"].ToString()))
-                {
-                    LoadUserProfile(drUser);
+            //    if (drUser != null && Password.VerifyPassword(password, drUser["PasswordHash"].ToString(), drUser["PasswordSalt"].ToString()))
+            //    {
+            //        LoadUserProfile(drUser);
 
                     using (frmMain frmMain = new frmMain())
                     {
+                        this.Visible = false;
                         frmMain.ShowDialog();
+                        Application.Exit();
                     }
-                }
-                else
-                    MessageBox.Show("Incorrect Email or Password.", "Login Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"An error occurred while trying to log in. Details: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            //    }
+            //    else
+            //        MessageBox.Show("Incorrect Email or Password.", "Login Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show($"An error occurred while trying to log in. Details: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //}
         }
 
         private void LoadUserProfile(DataRow drUser)
