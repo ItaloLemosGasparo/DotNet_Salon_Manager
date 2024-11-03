@@ -130,6 +130,7 @@
             this.appointmentsToolStripMenuItem.Name = "appointmentsToolStripMenuItem";
             this.appointmentsToolStripMenuItem.Size = new System.Drawing.Size(95, 20);
             this.appointmentsToolStripMenuItem.Text = "Appointments";
+            this.appointmentsToolStripMenuItem.Click += new System.EventHandler(this.appointmentsToolStripMenuItem_Click);
             // 
             // employeesToolStripMenuItem
             // 
@@ -145,12 +146,14 @@
             this.newEmployeeToolStripMenuItem.Name = "newEmployeeToolStripMenuItem";
             this.newEmployeeToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
             this.newEmployeeToolStripMenuItem.Text = "New Employee";
+            this.newEmployeeToolStripMenuItem.Click += new System.EventHandler(this.newEmployeeToolStripMenuItem_Click);
             // 
             // employeesManagementToolStripMenuItem
             // 
             this.employeesManagementToolStripMenuItem.Name = "employeesManagementToolStripMenuItem";
             this.employeesManagementToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
             this.employeesManagementToolStripMenuItem.Text = "Employees Management";
+            this.employeesManagementToolStripMenuItem.Click += new System.EventHandler(this.employeesManagementToolStripMenuItem_Click);
             // 
             // reportsToolStripMenuItem
             // 

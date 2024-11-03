@@ -9,6 +9,16 @@ namespace DotNet_Salon_Manager.modules.Classes
 {
     internal class User
     {
+        private void LoadUserProfile(DataRow drUser)
+        {
+            UserProfile.StartProfile(
+                Convert.ToInt32(drUser["UserId"]),
+                drUser["Name"].ToString(),
+                drUser["CPF"].ToString(),
+                drUser["Email"].ToString(),
+                Convert.ToInt32(drUser["AccessLevelId"]));
+        }
+
         public static bool HasAccess(int accessLevelNeeded, string frm)
         {
             if (UserProfile.AccessLevelId <= accessLevelNeeded)

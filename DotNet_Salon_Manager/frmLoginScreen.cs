@@ -42,9 +42,9 @@ namespace DotNet_Salon_Manager.modules
 
             //    if (drUser != null && Password.VerifyPassword(password, drUser["PasswordHash"].ToString(), drUser["PasswordSalt"].ToString()))
             //    {
-            //        LoadUserProfile(drUser);
+            //        User.LoadUserProfile(drUser);
 
-                    using (frmMain frmMain = new frmMain())
+            using (frmMain frmMain = new frmMain())
                     {
                         this.Visible = false;
                         frmMain.ShowDialog();
@@ -58,16 +58,6 @@ namespace DotNet_Salon_Manager.modules
             //{
             //    MessageBox.Show($"An error occurred while trying to log in. Details: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             //}
-        }
-
-        private void LoadUserProfile(DataRow drUser)
-        {
-            UserProfile.StartProfile(
-                Convert.ToInt32(drUser["UserId"]),
-                drUser["Name"].ToString(),
-                drUser["CPF"].ToString(),
-                drUser["Email"].ToString(),
-                Convert.ToInt32(drUser["AccessLevelId"]));
-        }
+        }        
     }
 }
