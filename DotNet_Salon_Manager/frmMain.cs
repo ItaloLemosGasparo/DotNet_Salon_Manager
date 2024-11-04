@@ -1,11 +1,12 @@
-﻿using DotNet_Salon_Manager.modules;
+﻿using System;
+using System.Windows.Forms;
+using DotNet_Salon_Manager.Classes;
 using DotNet_Salon_Manager.modules.Appointments;
-using DotNet_Salon_Manager.modules.Classes;
 using DotNet_Salon_Manager.modules.Clients;
 using DotNet_Salon_Manager.modules.Employees;
 using DotNet_Salon_Manager.modules.Products;
-using System;
-using System.Windows.Forms;
+using Globals;
+
 
 namespace DotNet_Salon_Manager
 {
@@ -14,16 +15,43 @@ namespace DotNet_Salon_Manager
         public frmMain()
         {
             InitializeComponent();
+            InitializeConnectionTimer();
+        }
+
+        private void InitializeConnectionTimer()
+        {
+            connectionTimer = new Timer();
+            connectionTimer.Tick += ConnectionTimer_Tick;
+            connectionTimer.Start();
+        }
+
+        private async void ConnectionTimer_Tick(object sender, EventArgs e)
+        {
+            bool connectionAlive = await Queries.PingDatabaseAsync();
+            if (!connectionAlive)
+            {
+                MessageBox.Show("Connection to the database has been lost. The application will now close.", "Connection Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Application.Exit();
+            }
         }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            if (MessageBox.Show("Are you sure you want to exit?", "Exit Application", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                Application.Exit();
         }
 
         private void openForm(Form frm)
         {
-            lblForm.Text = frm.Name;
+            Form openForm = Application.OpenForms[frm.Name];
+            if (openForm != null)
+            {
+                openForm.BringToFront();
+                lblForm.Text = openForm.Text;
+                return;
+            }
+
+            lblForm.Text = frm.Text;
             frm.MdiParent = this;
             frm.WindowState = FormWindowState.Maximized;
             frm.Show();
@@ -50,7 +78,7 @@ namespace DotNet_Salon_Manager
         private void productsManagementToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (User.HasAccess(3, $"{sender.ToString()}"))
-                openForm(new frmNewProduct());
+                openForm(new frmProductManagement());
         }
 
         private void appointmentsToolStripMenuItem_Click(object sender, EventArgs e)

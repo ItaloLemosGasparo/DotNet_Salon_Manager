@@ -1,22 +1,22 @@
-﻿using Classes;
-using System;
+﻿using System;
 using System.Data.SqlClient;
 using System.Data;
 using Globals;
 using System.Windows.Forms;
 
-namespace DotNet_Salon_Manager.modules.Classes
+namespace DotNet_Salon_Manager.Classes
 {
     internal class User
     {
-        private void LoadUserProfile(DataRow drUser)
+        public static void LoadUserProfile(DataRow drUser)
         {
             UserProfile.StartProfile(
                 Convert.ToInt32(drUser["UserId"]),
                 drUser["Name"].ToString(),
                 drUser["CPF"].ToString(),
                 drUser["Email"].ToString(),
-                Convert.ToInt32(drUser["AccessLevelId"]));
+                Convert.ToInt32(drUser["AccessLevelId"])
+            );
         }
 
         public static bool HasAccess(int accessLevelNeeded, string frm)
@@ -36,16 +36,6 @@ namespace DotNet_Salon_Manager.modules.Classes
             sqlParameter.Add("@Email", SqlDbType.VarChar).Value = email;
 
             DataTable dataTable = Queries.LoadDataTable("SP_FIND_USER_BY_EMAIL", sqlParameter);
-
-            return dataTable.Rows.Count > 0 ? dataTable.Rows[0] : null;
-        }
-
-        public static DataRow FindUserByName(string name)
-        {
-            SqlParameterCollection sqlParameter = new SqlCommand().Parameters;
-            sqlParameter.Add("@Name", SqlDbType.VarChar).Value = name;
-
-            DataTable dataTable = Queries.LoadDataTable("SP_FIND_USER_BY_NAME", sqlParameter);
 
             return dataTable.Rows.Count > 0 ? dataTable.Rows[0] : null;
         }

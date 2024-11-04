@@ -2,7 +2,7 @@
 using System.Security.Cryptography;
 using System.Text;
 
-namespace Classes
+namespace Globals
 {
     public class Password
     {

@@ -36,11 +36,14 @@
             this.btnLogin = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.loadingImage = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.loadingImage)).BeginInit();
             this.SuspendLayout();
             // 
             // txtEmail
             // 
+            this.txtEmail.Enabled = false;
             this.txtEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEmail.Location = new System.Drawing.Point(50, 330);
             this.txtEmail.MaxLength = 50;
@@ -50,6 +53,7 @@
             // 
             // txtPass
             // 
+            this.txtPass.Enabled = false;
             this.txtPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPass.Location = new System.Drawing.Point(50, 382);
             this.txtPass.MaxLength = 50;
@@ -80,6 +84,7 @@
             // 
             // btnLogin
             // 
+            this.btnLogin.Enabled = false;
             this.btnLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogin.Location = new System.Drawing.Point(110, 414);
             this.btnLogin.Name = "btnLogin";
@@ -91,6 +96,7 @@
             // 
             // btnExit
             // 
+            this.btnExit.Enabled = false;
             this.btnExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExit.Location = new System.Drawing.Point(109, 450);
             this.btnExit.Name = "btnExit";
@@ -110,11 +116,23 @@
             this.pictureBox1.TabIndex = 4;
             this.pictureBox1.TabStop = false;
             // 
+            // loadingImage
+            // 
+            this.loadingImage.BackColor = System.Drawing.Color.Transparent;
+            this.loadingImage.Image = ((System.Drawing.Image)(resources.GetObject("loadingImage.Image")));
+            this.loadingImage.Location = new System.Drawing.Point(12, 89);
+            this.loadingImage.Name = "loadingImage";
+            this.loadingImage.Size = new System.Drawing.Size(276, 276);
+            this.loadingImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.loadingImage.TabIndex = 5;
+            this.loadingImage.TabStop = false;
+            // 
             // frmLoginScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(300, 500);
+            this.Controls.Add(this.loadingImage);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnLogin);
@@ -126,7 +144,9 @@
             this.Name = "frmLoginScreen";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login Screen";
+            this.Load += new System.EventHandler(this.frmLoginScreen_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.loadingImage)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -141,5 +161,6 @@
         private System.Windows.Forms.Button btnLogin;
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox loadingImage;
     }
 }

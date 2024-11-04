@@ -3,6 +3,7 @@ using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace Globals
 {
@@ -10,6 +11,48 @@ namespace Globals
     {
         private static string AzureConnectionString = ConfigurationManager.ConnectionStrings["AzureConnectionString"].ConnectionString;
         public static string classReturnMessage { get; private set; }
+
+        public static async Task<bool> ConnectToDatabaseAsync()
+        {
+            classReturnMessage = "OK";
+
+            using (SqlConnection connection = new SqlConnection(AzureConnectionString))
+            {
+                try
+                {
+                    await connection.OpenAsync();
+                    return true; 
+                }
+                catch (Exception ex)
+                {
+                    classReturnMessage = "An error occurred while trying to access the database. Details: \n" + ex.Message;
+                    return false; 
+                }
+            }
+        }
+
+        public static async Task<bool> PingDatabaseAsync()
+        {
+            using (SqlConnection connection = new SqlConnection(AzureConnectionString))
+            {
+                try
+                {
+                    await connection.OpenAsync();
+
+                    using (SqlCommand cmd = connection.CreateCommand())
+                    {
+                        cmd.CommandText = "SELECT 1";
+                        await cmd.ExecuteNonQueryAsync();
+                    }
+
+                    return true;
+                }
+                catch (Exception)
+                {
+                    return false;
+                }
+            }
+        }
 
         public static int ExecuteProcedure(string procedure, SqlParameterCollection lstParametros, SqlParameter idOutput = null, int timeout = 30)
         {

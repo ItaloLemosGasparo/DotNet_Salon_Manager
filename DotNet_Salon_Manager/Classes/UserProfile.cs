@@ -1,4 +1,4 @@
-﻿namespace DotNet_Salon_Manager.modules.Classes
+﻿namespace DotNet_Salon_Manager.Classes
 {
     public static class UserProfile
     {
