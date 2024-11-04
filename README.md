@@ -30,4 +30,4 @@ This README will be updated as the project progresses.
 <img src="https://i.ibb.co/NCJmc8L/Whats-App-Image-2024-10-28-at-10-59-41.jpg" alt="LoginScreen">
 
 
-Icons by: <a href="https://www.flaticon.com/br/packs/essential-collection" title="do-utilizador ícones">Smashicons</a>
+Icons by: <a href="https://www.flaticon.com/br/packs/essential-collection" title="do-utilizador ícones">Smashicons</a> and <a href="https://www.flaticon.com/br/icones-gratis/salao-de-beleza" title="do-utilizador ícones">Freepik</a>
