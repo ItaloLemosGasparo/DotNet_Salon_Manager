@@ -24,7 +24,7 @@
 This README will be updated as the project progresses.
 
 ## Temporary Database Structure
-<img src="https://i.ibb.co/681T1DP/Data-Base-Structure.png" alt="DataBase Prototype">
+<img src="https://i.ibb.co/jk7p3Pm/Data-Base-Structure-drawio.png" alt="DataBase Prototype">
 
 ## Prototypes
 <img src="https://i.ibb.co/NCJmc8L/Whats-App-Image-2024-10-28-at-10-59-41.jpg" alt="LoginScreen">
