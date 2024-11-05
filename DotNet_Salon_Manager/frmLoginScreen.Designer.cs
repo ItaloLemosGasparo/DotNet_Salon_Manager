@@ -35,9 +35,11 @@
             this.label2 = new System.Windows.Forms.Label();
             this.btnLogin = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pbViewPassword = new System.Windows.Forms.PictureBox();
+            this.pbLogo = new System.Windows.Forms.PictureBox();
             this.loadingImage = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbViewPassword)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.loadingImage)).BeginInit();
             this.SuspendLayout();
             // 
@@ -106,15 +108,26 @@
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
-            // pictureBox1
+            // pbViewPassword
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(276, 276);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 4;
-            this.pictureBox1.TabStop = false;
+            this.pbViewPassword.BackColor = System.Drawing.Color.Transparent;
+            this.pbViewPassword.Image = global::DotNet_Salon_Manager.Properties.Resources.ViewPassword1;
+            this.pbViewPassword.Location = new System.Drawing.Point(256, 382);
+            this.pbViewPassword.Name = "pbViewPassword";
+            this.pbViewPassword.Size = new System.Drawing.Size(25, 25);
+            this.pbViewPassword.TabIndex = 6;
+            this.pbViewPassword.TabStop = false;
+            this.pbViewPassword.Click += new System.EventHandler(this.pbViewPassword_Click);
+            // 
+            // pbLogo
+            // 
+            this.pbLogo.Image = ((System.Drawing.Image)(resources.GetObject("pbLogo.Image")));
+            this.pbLogo.Location = new System.Drawing.Point(12, 12);
+            this.pbLogo.Name = "pbLogo";
+            this.pbLogo.Size = new System.Drawing.Size(276, 276);
+            this.pbLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbLogo.TabIndex = 4;
+            this.pbLogo.TabStop = false;
             // 
             // loadingImage
             // 
@@ -132,20 +145,22 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(300, 500);
-            this.Controls.Add(this.loadingImage);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.pbViewPassword);
+            this.Controls.Add(this.pbLogo);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtPass);
             this.Controls.Add(this.txtEmail);
+            this.Controls.Add(this.loadingImage);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmLoginScreen";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login Screen";
             this.Load += new System.EventHandler(this.frmLoginScreen_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbViewPassword)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.loadingImage)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -160,7 +175,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnLogin;
         private System.Windows.Forms.Button btnExit;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pbLogo;
         private System.Windows.Forms.PictureBox loadingImage;
+        private System.Windows.Forms.PictureBox pbViewPassword;
     }
 }

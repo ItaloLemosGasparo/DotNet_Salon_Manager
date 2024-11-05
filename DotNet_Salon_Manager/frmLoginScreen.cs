@@ -61,6 +61,7 @@ namespace DotNet_Salon_Manager.modules
 
         private async void frmLoginScreen_Load(object sender, EventArgs e)
         {
+            loadingImage.BringToFront();
             loadingImage.Visible = true;
 
             bool connectionSuccessful = await Queries.ConnectToDatabaseAsync();
@@ -81,5 +82,12 @@ namespace DotNet_Salon_Manager.modules
             }
         }
 
+        private bool _viewPassword;
+        private void pbViewPassword_Click(object sender, EventArgs e)
+        {
+            _viewPassword = !_viewPassword;
+            pbViewPassword.Image = _viewPassword ? DotNet_Salon_Manager.Properties.Resources.UnViewPassword : DotNet_Salon_Manager.Properties.Resources.ViewPassword;
+            txtPass.PasswordChar = _viewPassword? '\0' : '*';
+        }
     }
 }

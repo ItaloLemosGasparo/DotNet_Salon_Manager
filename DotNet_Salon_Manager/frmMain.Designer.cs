@@ -38,7 +38,7 @@
             this.inventoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newProductToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.productsManagementToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.appointmentsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.SchedulesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.employeesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newEmployeeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.employeesManagementToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -63,7 +63,7 @@
             this.exitToolStripMenuItem,
             this.clientsToolStripMenuItem,
             this.inventoryToolStripMenuItem,
-            this.appointmentsToolStripMenuItem,
+            this.SchedulesToolStripMenuItem,
             this.employeesToolStripMenuItem,
             this.reportsToolStripMenuItem,
             this.settingsToolStripMenuItem,
@@ -131,13 +131,13 @@
             this.productsManagementToolStripMenuItem.Text = "Products Management";
             this.productsManagementToolStripMenuItem.Click += new System.EventHandler(this.productsManagementToolStripMenuItem_Click);
             // 
-            // appointmentsToolStripMenuItem
+            // SchedulesToolStripMenuItem
             // 
-            this.appointmentsToolStripMenuItem.Image = global::DotNet_Salon_Manager.Properties.Resources.Appointments;
-            this.appointmentsToolStripMenuItem.Name = "appointmentsToolStripMenuItem";
-            this.appointmentsToolStripMenuItem.Size = new System.Drawing.Size(135, 44);
-            this.appointmentsToolStripMenuItem.Text = "Appointments";
-            this.appointmentsToolStripMenuItem.Click += new System.EventHandler(this.appointmentsToolStripMenuItem_Click);
+            this.SchedulesToolStripMenuItem.Image = global::DotNet_Salon_Manager.Properties.Resources.Appointments;
+            this.SchedulesToolStripMenuItem.Name = "SchedulesToolStripMenuItem";
+            this.SchedulesToolStripMenuItem.Size = new System.Drawing.Size(112, 44);
+            this.SchedulesToolStripMenuItem.Text = "Schedules";
+            this.SchedulesToolStripMenuItem.Click += new System.EventHandler(this.appointmentsToolStripMenuItem_Click);
             // 
             // employeesToolStripMenuItem
             // 
@@ -252,7 +252,7 @@
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem clientsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem inventoryToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem appointmentsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem SchedulesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem employeesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem reportsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem settingsToolStripMenuItem;

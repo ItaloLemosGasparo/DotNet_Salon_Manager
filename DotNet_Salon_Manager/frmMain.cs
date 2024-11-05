@@ -44,7 +44,7 @@ namespace DotNet_Salon_Manager
         private void openForm(Form frm)
         {
             Form openForm = Application.OpenForms[frm.Name];
-            if (openForm != null)
+            if (openForm != null && !string.IsNullOrWhiteSpace(frm.Name))
             {
                 openForm.BringToFront();
                 lblForm.Text = openForm.Text;
@@ -84,7 +84,7 @@ namespace DotNet_Salon_Manager
         private void appointmentsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (User.HasAccess(4, $"{sender.ToString()}"))
-                openForm(new frmAppoitments());
+                openForm(new frmSchedules());
         }
 
         private void newEmployeeToolStripMenuItem_Click(object sender, EventArgs e)

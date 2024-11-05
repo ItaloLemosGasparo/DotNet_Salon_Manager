@@ -1,6 +1,6 @@
 ﻿namespace DotNet_Salon_Manager.modules.Appointments
 {
-    partial class frmAppoitments
+    partial class frmSchedules
     {
         /// <summary>
         /// Required designer variable.

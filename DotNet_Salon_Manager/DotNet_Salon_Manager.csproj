@@ -58,11 +58,11 @@
     <Compile Include="frmLoginScreen.Designer.cs">
       <DependentUpon>frmLoginScreen.cs</DependentUpon>
     </Compile>
-    <Compile Include="modules\Appointments\frmAppoitments.cs">
+    <Compile Include="modules\Schedules\frmSchedules.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="modules\Appointments\frmAppoitments.Designer.cs">
-      <DependentUpon>frmAppoitments.cs</DependentUpon>
+    <Compile Include="modules\Schedules\frmSchedules.Designer.cs">
+      <DependentUpon>frmSchedules.cs</DependentUpon>
     </Compile>
     <Compile Include="Classes\User.cs" />
     <Compile Include="Classes\UserProfile.cs" />
@@ -122,8 +122,8 @@
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="modules\Appointments\frmAppoitments.resx">
-      <DependentUpon>frmAppoitments.cs</DependentUpon>
+    <EmbeddedResource Include="modules\Schedules\frmSchedules.resx">
+      <DependentUpon>frmSchedules.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="modules\Employees\frmEmployeeManagement.resx">
       <DependentUpon>frmEmployeeManagement.cs</DependentUpon>
@@ -180,6 +180,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Products.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ViewPassword.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\UnViewPassword.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

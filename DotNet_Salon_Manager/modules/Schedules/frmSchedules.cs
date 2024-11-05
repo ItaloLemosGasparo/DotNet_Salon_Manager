@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace DotNet_Salon_Manager.modules.Appointments
 {
-    public partial class frmAppoitments : Form
+    public partial class frmSchedules : Form
     {
-        public frmAppoitments()
+        public frmSchedules()
         {
             InitializeComponent();
         }
