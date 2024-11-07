@@ -44,7 +44,7 @@ namespace DotNet_Salon_Manager
         private void openForm(Form frm)
         {
             Form openForm = Application.OpenForms[frm.Name];
-            if (openForm != null && !string.IsNullOrWhiteSpace(frm.Name))
+            if (openForm != null)
             {
                 openForm.BringToFront();
                 lblForm.Text = openForm.Text;

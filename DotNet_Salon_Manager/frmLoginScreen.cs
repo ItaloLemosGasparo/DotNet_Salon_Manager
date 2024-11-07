@@ -75,10 +75,12 @@ namespace DotNet_Salon_Manager.modules
             }
             else
             {
-                btnExit.Enabled = true;
-                btnLogin.Enabled = true;
                 txtEmail.Enabled = true;
+                txtEmail.Focus();
                 txtPass.Enabled = true;
+                btnLogin.Enabled = true;
+                btnExit.Enabled = true;
+                pbViewPassword.Enabled = true;
             }
         }
 
@@ -88,6 +90,13 @@ namespace DotNet_Salon_Manager.modules
             _viewPassword = !_viewPassword;
             pbViewPassword.Image = _viewPassword ? DotNet_Salon_Manager.Properties.Resources.UnViewPassword : DotNet_Salon_Manager.Properties.Resources.ViewPassword;
             txtPass.PasswordChar = _viewPassword? '\0' : '*';
+        }
+
+        private void txtPass_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+                
+                btnLogin_Click(sender, e);
         }
     }
 }

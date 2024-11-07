@@ -55,6 +55,7 @@
             // 
             // txtPass
             // 
+            this.txtPass.AcceptsReturn = true;
             this.txtPass.Enabled = false;
             this.txtPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPass.Location = new System.Drawing.Point(50, 382);
@@ -63,6 +64,7 @@
             this.txtPass.PasswordChar = '*';
             this.txtPass.Size = new System.Drawing.Size(200, 26);
             this.txtPass.TabIndex = 1;
+            this.txtPass.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPass_KeyPress);
             // 
             // label1
             // 
@@ -71,7 +73,7 @@
             this.label1.Location = new System.Drawing.Point(125, 307);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(48, 20);
-            this.label1.TabIndex = 2;
+            this.label1.TabIndex = 5;
             this.label1.Text = "Email";
             // 
             // label2
@@ -81,7 +83,7 @@
             this.label2.Location = new System.Drawing.Point(111, 359);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(78, 20);
-            this.label2.TabIndex = 3;
+            this.label2.TabIndex = 4;
             this.label2.Text = "Password";
             // 
             // btnLogin
@@ -111,33 +113,37 @@
             // pbViewPassword
             // 
             this.pbViewPassword.BackColor = System.Drawing.Color.Transparent;
-            this.pbViewPassword.Image = global::DotNet_Salon_Manager.Properties.Resources.ViewPassword1;
+            this.pbViewPassword.Enabled = false;
+            this.pbViewPassword.Image = global::DotNet_Salon_Manager.Properties.Resources.ViewPassword;
             this.pbViewPassword.Location = new System.Drawing.Point(256, 382);
             this.pbViewPassword.Name = "pbViewPassword";
             this.pbViewPassword.Size = new System.Drawing.Size(25, 25);
-            this.pbViewPassword.TabIndex = 6;
+            this.pbViewPassword.TabIndex = 0;
             this.pbViewPassword.TabStop = false;
             this.pbViewPassword.Click += new System.EventHandler(this.pbViewPassword_Click);
             // 
             // pbLogo
             // 
+            this.pbLogo.BackColor = System.Drawing.Color.Transparent;
+            this.pbLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pbLogo.Image = ((System.Drawing.Image)(resources.GetObject("pbLogo.Image")));
             this.pbLogo.Location = new System.Drawing.Point(12, 12);
             this.pbLogo.Name = "pbLogo";
             this.pbLogo.Size = new System.Drawing.Size(276, 276);
             this.pbLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbLogo.TabIndex = 4;
+            this.pbLogo.TabIndex = 1;
             this.pbLogo.TabStop = false;
             // 
             // loadingImage
             // 
             this.loadingImage.BackColor = System.Drawing.Color.Transparent;
+            this.loadingImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.loadingImage.Image = ((System.Drawing.Image)(resources.GetObject("loadingImage.Image")));
             this.loadingImage.Location = new System.Drawing.Point(12, 89);
             this.loadingImage.Name = "loadingImage";
             this.loadingImage.Size = new System.Drawing.Size(276, 276);
             this.loadingImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.loadingImage.TabIndex = 5;
+            this.loadingImage.TabIndex = 6;
             this.loadingImage.TabStop = false;
             // 
             // frmLoginScreen
