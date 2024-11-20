@@ -1,5 +1,7 @@
 # .NET Salon Manager
 
+# Work in progress (Paused until finish Java_SpringBoot_REST_API)
+
 ## Project Overview
 .NET Salon Manager is a comprehensive salon management application designed to streamline the daily operations of beauty salons. Built with .NET Framework and Windows Forms, this tool is tailored to provide an easy-to-use interface for salon managers, employees, and temporary staff with various levels of access. 
 
